@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script:wght@700&family=Plus+Jakarta+Sans:wght@500;700;800&family=Space+Grotesk:wght@700&display=swap');
 
 * {
   margin: 0;
@@ -28,7 +28,7 @@ body {
   width: 100%;
   min-height: 100vh;
   background-color: var(--bg-dark);
-  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text-white);
   overflow-x: hidden;
   position: relative;
@@ -38,6 +38,16 @@ body {
 :focus-visible {
   outline: 2px solid var(--orange-bright);
   outline-offset: 4px;
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .canvas-bg-wrapper {
+    opacity: 0.5;
+  }
 }
 
 /* Background Canvas & Warm Glow Backdrop */
@@ -51,6 +61,7 @@ body {
   pointer-events: none;
   background: radial-gradient(circle at 45% 45%, #ff5500 0%, #d63800 35%, #6e0e00 70%, #0e0200 100%);
   overflow: hidden;
+  will-change: transform;
 }
 
 #canvas {
@@ -86,7 +97,7 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .preloader.hidden {
@@ -239,7 +250,7 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   border: none;
   cursor: pointer;
 }
@@ -263,7 +274,7 @@ body {
   letter-spacing: 1px;
   text-decoration: none;
   text-transform: uppercase;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease;
   cursor: pointer;
 }
 
@@ -340,7 +351,6 @@ body {
   height: 2px;
   background-color: var(--text-dark);
   border-radius: 1px;
-  transition: transform 0.2s, opacity 0.2s;
 }
 
 /* Responsive Mobile Navigation Drawer */
@@ -360,7 +370,7 @@ body {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
   z-index: 100;
 }
 
@@ -497,7 +507,7 @@ body {
   border: 1px solid var(--card-border);
   border-radius: 20px;
   padding: 24px 22px;
-  transition: all 0.25s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .skill-card:hover {
@@ -537,7 +547,7 @@ body {
   border-radius: 16px;
   font-size: 0.82rem;
   font-weight: 600;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .skill-badge:hover {
@@ -562,7 +572,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  transition: all 0.25s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .project-card:hover {
@@ -680,7 +690,7 @@ body {
   letter-spacing: 1px;
   text-decoration: none;
   text-transform: uppercase;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 .project-btn:hover {
@@ -705,7 +715,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   min-height: 220px;
-  transition: all 0.25s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .service-card:hover {

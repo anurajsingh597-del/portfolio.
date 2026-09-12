@@ -1,6 +1,7 @@
 (function () {
-  // 1. Canvas Frame Animation Engine
+  // 1. Optimized Canvas Frame Animation Engine
   const TOTAL_FRAMES = 192;
+  const INITIAL_BATCH_SIZE = 10; // Load first 10 frames instantly for immediate render
   const FRAME_PATH_PREFIX = 'frames_24fps/frames/frame_';
   const FRAME_PATH_SUFFIX = '.png';
 
@@ -10,7 +11,7 @@
   const loaderBar = document.getElementById('loader-bar');
   const loaderText = document.getElementById('loader-text');
 
-  const images = [];
+  const images = new Array(TOTAL_FRAMES);
   let loadedCount = 0;
   let targetFrame = 0;
   let currentFrame = 0;
@@ -21,27 +22,58 @@
     return `${FRAME_PATH_PREFIX}${paddedNum}${FRAME_PATH_SUFFIX}`;
   }
 
-  function preloadImages() {
+  // Preload an individual frame
+  function loadSingleFrame(i) {
     return new Promise((resolve) => {
-      for (let i = 1; i <= TOTAL_FRAMES; i++) {
-        const img = new Image();
-        img.src = getFramePath(i);
+      if (images[i - 1]) return resolve();
+      const img = new Image();
+      img.src = getFramePath(i);
 
-        img.onload = () => {
-          loadedCount++;
-          updateProgress();
-          if (loadedCount === TOTAL_FRAMES) resolve();
-        };
+      img.onload = () => {
+        images[i - 1] = img;
+        loadedCount++;
+        updateProgress();
+        resolve();
+      };
 
-        img.onerror = () => {
-          loadedCount++;
-          updateProgress();
-          if (loadedCount === TOTAL_FRAMES) resolve();
-        };
-
-        images.push(img);
-      }
+      img.onerror = () => {
+        images[i - 1] = null;
+        loadedCount++;
+        updateProgress();
+        resolve();
+      };
     });
+  }
+
+  // Preload initial batch for instant page interactive state
+  function preloadInitialBatch() {
+    const promises = [];
+    for (let i = 1; i <= INITIAL_BATCH_SIZE; i++) {
+      promises.push(loadSingleFrame(i));
+    }
+    return Promise.all(promises);
+  }
+
+  // Load remaining frames in background idle chunks
+  function loadRemainingFrames() {
+    let currentIdx = INITIAL_BATCH_SIZE + 1;
+    function loadChunk() {
+      if (currentIdx > TOTAL_FRAMES) return;
+      const end = Math.min(currentIdx + 5, TOTAL_FRAMES + 1);
+      const promises = [];
+      for (let i = currentIdx; i < end; i++) {
+        promises.push(loadSingleFrame(i));
+      }
+      currentIdx = end;
+      Promise.all(promises).then(() => {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadChunk, { timeout: 1000 });
+        } else {
+          setTimeout(loadChunk, 50);
+        }
+      });
+    }
+    loadChunk();
   }
 
   function updateProgress() {
@@ -60,9 +92,25 @@
     drawFrame(Math.round(currentFrame));
   }
 
+  // Draw frame with fallback to nearest available loaded frame
   function drawFrame(index) {
     if (!canvas || !ctx) return;
-    const img = images[index];
+    
+    let img = images[index];
+    if (!img || !img.complete || img.naturalWidth === 0) {
+      // Find nearest loaded frame as fallback
+      for (let offset = 1; offset < TOTAL_FRAMES; offset++) {
+        if (index - offset >= 0 && images[index - offset] && images[index - offset].complete) {
+          img = images[index - offset];
+          break;
+        }
+        if (index + offset < TOTAL_FRAMES && images[index + offset] && images[index + offset].complete) {
+          img = images[index + offset];
+          break;
+        }
+      }
+    }
+
     if (!img || !img.complete || img.naturalWidth === 0) return;
 
     const screenWidth = window.innerWidth;
@@ -103,12 +151,13 @@
   window.addEventListener('resize', resizeCanvas);
 
   if (canvas) {
-    preloadImages().then(() => {
+    preloadInitialBatch().then(() => {
       if (preloader) preloader.classList.add('hidden');
       resizeCanvas();
       updateTargetFrame();
       currentFrame = targetFrame;
       animate();
+      loadRemainingFrames();
     });
   }
 
