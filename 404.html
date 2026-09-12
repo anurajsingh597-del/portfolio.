@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Page Not Found | Anuraj Singh</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="theme-color" content="#0a0302">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .error-page-wrap {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .error-code {
+      font-family: 'Anton', sans-serif;
+      font-size: 8rem;
+      line-height: 1;
+      color: var(--orange-bright);
+      margin-bottom: 10px;
+    }
+    .error-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+    .error-desc {
+      font-size: 1rem;
+      color: #a1a1aa;
+      max-width: 440px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas-bg-wrapper">
+    <div class="canvas-glow-overlay"></div>
+  </div>
+
+  <main class="page-overlay-content error-page-wrap">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Page Not Found</h1>
+    <p class="error-desc">
+      The page or resource you are looking for doesn't exist or has been moved.
+    </p>
+    <a href="index.html" class="btn-primary">
+      RETURN TO HOME
+    </a>
+  </main>
+</body>
+</html>

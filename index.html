@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anuraj Singh | Aspiring Data Analyst &amp; Web Developer</title>
+  <meta name="description" content="Personal portfolio website of Anuraj Singh, B.Tech student at AKGEC and Aspiring Data Analyst &amp; Web Developer.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="theme-color" content="#0a0302">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Preloader overlay -->
+  <div class="preloader" id="preloader">
+    <div class="loader-bar-bg">
+      <div class="loader-bar-fill" id="loader-bar"></div>
+    </div>
+    <div class="loader-text" id="loader-text">LOADING 0%</div>
+  </div>
+
+  <!-- Background Canvas for 192-Frame Scroll Animation -->
+  <div class="canvas-bg-wrapper">
+    <canvas id="canvas"></canvas>
+    <div class="canvas-glow-overlay"></div>
+  </div>
+
+  <!-- Main Page Content -->
+  <div class="page-overlay-content">
+
+    <!-- HERO SECTION & RIGHT PROFILE CARD -->
+    <header class="container" id="home">
+      <div class="hero-wrapper">
+        
+        <!-- Left Hero Column -->
+        <div class="hero-left">
+          
+          <!-- Logo: Cursive Anuraj Singh -->
+          <a href="#home" class="brand-logo" aria-label="Anuraj Singh Portfolio Home">
+            <div class="logo-text">Anuraj Singh</div>
+          </a>
+
+          <!-- Main BUILD Title & Subtitle -->
+          <div class="hero-main-content">
+            <h1 class="giant-build-title">BUILD</h1>
+            <p class="hero-subtext">
+              Web experiences that connect.<br>
+              Data insights that matter.
+            </p>
+
+            <div class="hero-buttons-wrap">
+              <a href="#projects" class="btn-primary">
+                <span>VIEW PROJECTS</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+              <a href="#contact" class="btn-secondary">CONTACT ME</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Side Profile Card -->
+        <div class="profile-card-right">
+          
+          <!-- Top Card Navigation -->
+          <nav class="card-nav" aria-label="Main Navigation">
+            <div class="card-nav-links">
+              <a href="#projects" class="card-nav-link">WORK</a>
+              <a href="#about" class="card-nav-link">ABOUT</a>
+              <a href="#projects" class="card-nav-link">PROJECTS</a>
+              <a href="#services" class="card-nav-link">SERVICES</a>
+              <a href="#contact" class="card-nav-link">CONTACT</a>
+            </div>
+            <button class="hamburger-btn" id="hamburger-btn" aria-expanded="false" aria-label="Toggle navigation menu">
+              <div class="hamburger-line"></div>
+              <div class="hamburger-line"></div>
+            </button>
+          </nav>
+
+          <!-- Mobile Dropdown Navigation Drawer -->
+          <div class="mobile-nav-overlay" id="mobile-nav">
+            <a href="#projects" class="card-nav-link mobile-nav-item">WORK</a>
+            <a href="#about" class="card-nav-link mobile-nav-item">ABOUT</a>
+            <a href="#projects" class="card-nav-link mobile-nav-item">PROJECTS</a>
+            <a href="#services" class="card-nav-link mobile-nav-item">SERVICES</a>
+            <a href="#contact" class="card-nav-link mobile-nav-item">CONTACT</a>
+          </div>
+
+          <!-- Profile Card Body Content -->
+          <div class="card-body-content">
+            <div class="status-badge">
+              AVAILABLE FOR <div class="status-dot"></div>
+            </div>
+            <h2 class="card-main-title">
+              Aspiring Data Analyst<br>&amp; Web Developer
+            </h2>
+            <p class="card-statement">
+              I build modern web experiences and use data, programming and SQL to solve practical problems and create meaningful insights.
+            </p>
+          </div>
+
+          <!-- Profile Card Bottom Footer -->
+          <div class="card-footer">
+            <span class="card-footer-name">ANURAJ SINGH</span>
+            <span class="card-footer-sub">B.TECH STUDENT &bull; AKGEC</span>
+          </div>
+
+        </div>
+
+      </div>
+    </header>
+
+    <main>
+      <!-- ABOUT SECTION -->
+      <section class="section container" id="about">
+        <div class="section-title-wrap">
+          <div class="section-subtitle">BIOGRAPHY &amp; GOALS</div>
+          <h2 class="section-heading">ABOUT ME</h2>
+        </div>
+
+        <div class="about-card-box">
+          <p class="about-paragraph">
+            Hi, I'm <strong>Anuraj Singh</strong>, a B.Tech student at Ajay Kumar Garg Engineering College (AKGEC) and an aspiring Data Analyst &amp; Web Developer. I enjoy building modern web experiences and working with data to discover useful insights.
+          </p>
+
+          <div class="about-highlights">
+            <div class="highlight-box">
+              <strong>Skill Development:</strong> Currently developing my skills in HTML, CSS, JavaScript, React.js, Python, SQL, PostgreSQL, Excel, Data Analysis and Git/GitHub.
+            </div>
+            <div class="highlight-box">
+              <strong>Career Goal:</strong> My goal is to combine web development and data analytics to build practical, user-focused solutions for real-world problems.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS SECTION -->
+      <section class="section container" id="skills">
+        <div class="section-title-wrap">
+          <div class="section-subtitle">MY TECH STACK</div>
+          <h2 class="section-heading">SKILLS &amp; EXPERTISE</h2>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Frontend -->
+          <div class="skill-card">
+            <h3 class="skill-category-title">Frontend</h3>
+            <div class="skill-pills-wrap">
+              <span class="skill-badge">HTML</span>
+              <span class="skill-badge">CSS</span>
+              <span class="skill-badge">JavaScript</span>
+              <span class="skill-badge">React.js</span>
+            </div>
+          </div>
+
+          <!-- Data & Programming -->
+          <div class="skill-card">
+            <h3 class="skill-category-title">Data &amp; Programming</h3>
+            <div class="skill-pills-wrap">
+              <span class="skill-badge">Python</span>
+              <span class="skill-badge">SQL</span>
+              <span class="skill-badge">PostgreSQL</span>
+              <span class="skill-badge">Excel</span>
+              <span class="skill-badge">Data Analysis</span>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="skill-card">
+            <h3 class="skill-category-title">Tools</h3>
+            <div class="skill-pills-wrap">
+              <span class="skill-badge">Git</span>
+              <span class="skill-badge">GitHub</span>
+              <span class="skill-badge">VS Code</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS SECTION -->
+      <section class="section container" id="projects">
+        <div class="section-title-wrap">
+          <div class="section-subtitle">PORTFOLIO WORK</div>
+          <h2 class="section-heading">FEATURED PROJECTS</h2>
+        </div>
+
+        <div class="projects-grid">
+          
+          <!-- 01 — NETFLIX CLONE -->
+          <article class="project-card">
+            <div class="project-header">
+              <div>
+                <div class="project-num">01</div>
+                <h3 class="project-title">Netflix Clone</h3>
+              </div>
+              <span class="project-category">Web Development</span>
+            </div>
+            
+            <p class="project-desc">
+              A Netflix-inspired streaming platform interface built to practice frontend development, responsive layouts and interactive user interfaces.
+            </p>
+
+            <div class="project-details-block">
+              <span class="details-label">Tech Stack:</span>
+              <div class="tech-stack-row">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">React.js</span>
+              </div>
+            </div>
+
+            <div class="project-details-block">
+              <span class="details-label">Key Features:</span>
+              <ul class="features-list">
+                <li>Netflix-inspired dark interface</li>
+                <li>Movie and TV show sections</li>
+                <li>Responsive layout</li>
+                <li>Interactive navigation</li>
+                <li>Modern UI components</li>
+                <li>Smooth hover effects</li>
+              </ul>
+            </div>
+
+            <div class="project-btn-row">
+              <a href="https://github.com/anurajsingh597-del" target="_blank" rel="noopener noreferrer" class="project-btn">VIEW PROJECT</a>
+              <a href="https://github.com/anurajsingh597-del" target="_blank" rel="noopener noreferrer" class="project-btn">VIEW CODE</a>
+            </div>
+          </article>
+
+          <!-- 02 — JANSETU -->
+          <article class="project-card">
+            <div class="project-header">
+              <div>
+                <div class="project-num">02</div>
+                <h3 class="project-title">JanSetu</h3>
+              </div>
+              <span class="project-category">Web Development / Social Impact</span>
+            </div>
+
+            <p class="project-desc">
+              JanSetu is a citizen-focused digital platform designed to make access to public services and useful information simpler and more user-friendly.
+            </p>
+
+            <div class="project-details-block">
+              <span class="details-label">Tech Stack:</span>
+              <div class="tech-stack-row">
+                <span class="tech-tag">React.js</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Firebase</span>
+              </div>
+            </div>
+
+            <div class="project-details-block">
+              <span class="details-label">Key Features:</span>
+              <ul class="features-list">
+                <li>User-friendly interface</li>
+                <li>Citizen-focused design</li>
+                <li>Authentication</li>
+                <li>Firebase integration</li>
+                <li>Service-related information</li>
+                <li>Responsive design</li>
+              </ul>
+            </div>
+
+            <div class="project-btn-row">
+              <a href="https://github.com/anurajsingh597-del" target="_blank" rel="noopener noreferrer" class="project-btn">VIEW PROJECT</a>
+              <a href="https://github.com/anurajsingh597-del" target="_blank" rel="noopener noreferrer" class="project-btn">VIEW CODE</a>
+            </div>
+          </article>
+
+          <!-- 03 — ZEPTO SQL DATA ANALYSIS -->
+          <article class="project-card">
+            <div class="project-header">
+              <div>
+                <div class="project-num">03</div>
+                <h3 class="project-title">Zepto SQL Data Analysis</h3>
+              </div>
+              <span class="project-category">Data Analytics</span>
+            </div>
+
+            <p class="project-desc">
+              A real-world e-commerce data analysis project using PostgreSQL and SQL to explore product, pricing, inventory and business-related insights from a Zepto dataset (<code>zepto_v2.csv</code>).
+            </p>
+
+            <div class="project-details-block">
+              <span class="details-label">Tech Stack &amp; Dataset:</span>
+              <div class="tech-stack-row">
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">Data Analysis</span>
+                <span class="tech-tag">zepto_v2.csv</span>
+              </div>
+            </div>
+
+            <div class="project-details-block">
+              <span class="details-label">Project Highlights:</span>
+              <ul class="features-list">
+                <li>Data exploration</li>
+                <li>SQL queries</li>
+                <li>Data cleaning</li>
+                <li>Business insights</li>
+                <li>Product and pricing analysis</li>
+              </ul>
+            </div>
+
+            <div class="project-btn-row">
+              <a href="https://github.com/anurajsingh597-del" target="_blank" rel="noopener noreferrer" class="project-btn">VIEW PROJECT</a>
+              <a href="https://github.com/anurajsingh597-del" target="_blank" rel="noopener noreferrer" class="project-btn">VIEW CODE</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- SERVICES SECTION -->
+      <section class="section container" id="services">
+        <div class="section-title-wrap">
+          <div class="section-subtitle">WHAT I OFFER</div>
+          <h2 class="section-heading">SERVICES</h2>
+        </div>
+
+        <div class="services-grid">
+          <!-- 01 -->
+          <div class="service-card">
+            <div>
+              <div class="service-num">01</div>
+              <h3 class="service-title">WEB DEVELOPMENT</h3>
+              <p class="service-desc">
+                I create modern, responsive and interactive websites with a focus on clean frontend experiences.
+              </p>
+            </div>
+          </div>
+
+          <!-- 02 -->
+          <div class="service-card">
+            <div>
+              <div class="service-num">02</div>
+              <h3 class="service-title">DATA ANALYTICS</h3>
+              <p class="service-desc">
+                I work with SQL, PostgreSQL, Python and Excel to analyze data and extract useful insights.
+              </p>
+            </div>
+          </div>
+
+          <!-- 03 -->
+          <div class="service-card">
+            <div>
+              <div class="service-num">03</div>
+              <h3 class="service-title">FRONTEND &amp; UI</h3>
+              <p class="service-desc">
+                I build clean, user-friendly interfaces with modern layouts, animations and responsive design.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section class="section container" id="contact" style="padding-bottom: 80px;">
+        <div class="section-title-wrap">
+          <div class="section-subtitle">GET IN TOUCH</div>
+          <h2 class="section-heading">LET'S CONNECT</h2>
+        </div>
+
+        <div class="contact-card-box">
+          <div class="contact-header-text">
+            <p class="hero-subtext" style="margin-bottom: 24px;">
+              Have a project, opportunity or idea?<br>
+              Let's connect and build something meaningful.
+            </p>
+
+            <div class="contact-name">ANURAJ SINGH</div>
+            <div class="contact-sub">B.Tech Student &bull; AKGEC</div>
+
+            <div class="contact-details-list">
+              <div>Email: <a href="mailto:Anurajsingh597@gmail.com">Anurajsingh597@gmail.com</a></div>
+              <div>LinkedIn: <a href="https://www.linkedin.com/in/anuraj-singh-b36a29414" target="_blank" rel="noopener noreferrer">linkedin.com/in/anuraj-singh-b36a29414</a></div>
+              <div>GitHub: <a href="https://github.com/anurajsingh597-del" target="_blank" rel="noopener noreferrer">github.com/anurajsingh597-del</a></div>
+            </div>
+
+            <div class="contact-buttons-row">
+              <a href="mailto:Anurajsingh597@gmail.com" class="btn-primary">EMAIL ME</a>
+              <a href="https://www.linkedin.com/in/anuraj-singh-b36a29414" target="_blank" rel="noopener noreferrer" class="btn-secondary">LINKEDIN</a>
+              <a href="https://github.com/anurajsingh597-del" target="_blank" rel="noopener noreferrer" class="btn-secondary">GITHUB</a>
+            </div>
+          </div>
+
+          <!-- Contact Form with Validation -->
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Rahul Sharma" required>
+              <span class="form-error" id="name-error">Please enter your name.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Your Email</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="e.g. rahul@example.com" required>
+              <span class="form-error" id="email-error">Please enter a valid email address.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" class="form-textarea" placeholder="How can I help you?" required></textarea>
+              <span class="form-error" id="message-error">Please enter your message.</span>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">SEND MESSAGE</button>
+
+            <div class="form-success-msg" id="form-success">
+              Thank you for reaching out! Your message has been sent successfully.
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        &copy; 2026 Anuraj Singh. All rights reserved. Aspiring Data Analyst &amp; Web Developer.
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Interactive Scripts & Canvas Frame Animation Engine -->
+  <script>
+    (function () {
+      // 1. Canvas Frame Animation Engine
+      const TOTAL_FRAMES = 192;
+      const FRAME_PATH_PREFIX = 'frames_24fps/frames/frame_';
+      const FRAME_PATH_SUFFIX = '.png';
+
+      const canvas = document.getElementById('canvas');
+      const ctx = canvas.getContext('2d');
+      const preloader = document.getElementById('preloader');
+      const loaderBar = document.getElementById('loader-bar');
+      const loaderText = document.getElementById('loader-text');
+
+      const images = [];
+      let loadedCount = 0;
+      let targetFrame = 0;
+      let currentFrame = 0;
+      const ease = 0.16;
+
+      function getFramePath(index) {
+        const paddedNum = String(index).padStart(4, '0');
+        return `${FRAME_PATH_PREFIX}${paddedNum}${FRAME_PATH_SUFFIX}`;
+      }
+
+      function preloadImages() {
+        return new Promise((resolve) => {
+          for (let i = 1; i <= TOTAL_FRAMES; i++) {
+            const img = new Image();
+            img.src = getFramePath(i);
+
+            img.onload = () => {
+              loadedCount++;
+              updateProgress();
+              if (loadedCount === TOTAL_FRAMES) resolve();
+            };
+
+            img.onerror = () => {
+              loadedCount++;
+              updateProgress();
+              if (loadedCount === TOTAL_FRAMES) resolve();
+            };
+
+            images.push(img);
+          }
+        });
+      }
+
+      function updateProgress() {
+        const percent = Math.floor((loadedCount / TOTAL_FRAMES) * 100);
+        loaderBar.style.width = percent + '%';
+        loaderText.textContent = `LOADING ${percent}%`;
+      }
+
+      function resizeCanvas() {
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = window.innerWidth * dpr;
+        canvas.height = window.innerHeight * dpr;
+        ctx.scale(dpr, dpr);
+        drawFrame(Math.round(currentFrame));
+      }
+
+      function drawFrame(index) {
+        const img = images[index];
+        if (!img || !img.complete || img.naturalWidth === 0) return;
+
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+
+        const imgWidth = img.naturalWidth;
+        const imgHeight = img.naturalHeight;
+
+        const scale = Math.max(screenWidth / imgWidth, screenHeight / imgHeight);
+        const drawWidth = imgWidth * scale;
+        const drawHeight = imgHeight * scale;
+
+        const x = (screenWidth - drawWidth) / 2;
+        const y = (screenHeight - drawHeight) / 2;
+
+        ctx.clearRect(0, 0, screenWidth, screenHeight);
+        ctx.drawImage(img, x, y, drawWidth, drawHeight);
+      }
+
+      function updateTargetFrame() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        
+        if (maxScroll <= 0) return;
+
+        const scrollFraction = Math.max(0, Math.min(1, scrollTop / maxScroll));
+        targetFrame = scrollFraction * (TOTAL_FRAMES - 1);
+      }
+
+      function animate() {
+        currentFrame += (targetFrame - currentFrame) * ease;
+        const frameIndex = Math.max(0, Math.min(TOTAL_FRAMES - 1, Math.round(currentFrame)));
+        drawFrame(frameIndex);
+        requestAnimationFrame(animate);
+      }
+
+      window.addEventListener('scroll', updateTargetFrame, { passive: true });
+      window.addEventListener('resize', resizeCanvas);
+
+      preloadImages().then(() => {
+        preloader.classList.add('hidden');
+        resizeCanvas();
+        updateTargetFrame();
+        currentFrame = targetFrame;
+        animate();
+      });
+
+      // 2. Mobile Navigation Drawer Toggle
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      const mobileNav = document.getElementById('mobile-nav');
+      const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+
+      if (hamburgerBtn && mobileNav) {
+        hamburgerBtn.addEventListener('click', () => {
+          const isOpen = mobileNav.classList.contains('open');
+          if (isOpen) {
+            mobileNav.classList.remove('open');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+          } else {
+            mobileNav.classList.add('open');
+            hamburgerBtn.setAttribute('aria-expanded', 'true');
+          }
+        });
+
+        mobileNavItems.forEach((item) => {
+          item.addEventListener('click', () => {
+            mobileNav.classList.remove('open');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      // 3. Contact Form Validation & Submission
+      const contactForm = document.getElementById('contact-form');
+      if (contactForm) {
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
+
+        const nameError = document.getElementById('name-error');
+        const emailError = document.getElementById('email-error');
+        const messageError = document.getElementById('message-error');
+        const formSuccess = document.getElementById('form-success');
+
+        function isValidEmail(email) {
+          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          let valid = true;
+
+          nameError.classList.remove('visible');
+          emailError.classList.remove('visible');
+          messageError.classList.remove('visible');
+          formSuccess.classList.remove('visible');
+
+          if (!nameInput.value.trim()) {
+            nameError.classList.add('visible');
+            valid = false;
+          }
+
+          if (!emailInput.value.trim() || !isValidEmail(emailInput.value.trim())) {
+            emailError.classList.add('visible');
+            valid = false;
+          }
+
+          if (!messageInput.value.trim()) {
+            messageError.classList.add('visible');
+            valid = false;
+          }
+
+          if (valid) {
+            formSuccess.classList.add('visible');
+            contactForm.reset();
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
