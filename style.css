@@ -925,23 +925,5 @@ footer {
     gap: 4px;
   }
 }
-@media (max-width: 1024px) {
-  .hero-wrapper {
-    flex-direction: column;
-    gap: 24px;
-  }
-  .profile-card-right {
-    width: 100%;
-    max-width: 100%;
-  }
-}
 
-@media (max-width: 600px) {
-  .card-body-content {
-    padding: 16px;
-  }
-  .card-main-title {
-    font-size: 1.5rem;
-    line-height: 1.3;
-  }
-}
+
